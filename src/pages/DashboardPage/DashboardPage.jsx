@@ -1,6 +1,6 @@
 import React from 'react';
-import './DashboardPage.css'
-function DashboardPage(props) {
+
+function DashboardPage({}) {
     return (
         <div>
             DashboardPage

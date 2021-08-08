@@ -1,0 +1,11 @@
+[
+    {
+        "id":1,
+        "fname":"Chuck",
+        "lname":"Norris",
+        "email":"chuck@gmail.com",
+        "pwd": "123",
+        "isCommittee":"true"    
+    }
+]
+
