@@ -21,7 +21,9 @@ const activeUser = useContext(ActiveUserContext);
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             {/* {activeUser ? <Nav.Link href="#/recipes">Recipes</Nav.Link> : null} */}
-                          { activeUser? <Nav.Link href="#/dashboard">Dashboard</Nav.Link>:null}                        </Nav>
+                          { activeUser? <Nav.Link href="#/dashboard">Dashboard</Nav.Link>:null}
+                          { activeUser? <Nav.Link href="#/message">Message</Nav.Link>:null}
+                                                  </Nav>
                         <Nav className="ms-auto">
                             {!activeUser ? <Nav.Link href="#/login">Login</Nav.Link> : null}
                             {!activeUser ? <Nav.Link href="#/signup">Signup</Nav.Link> : null}

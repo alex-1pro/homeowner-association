@@ -7,6 +7,7 @@ import jsonUsers from "./data/users.json"
 import { useState } from "react";
 import UserModel from "./model/UserModel";
 import ActiveUserContext from "./shared/ActiveUserContext";
+import MessagePage from "./pages/MessagePage/MessagePage";
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
@@ -30,18 +31,22 @@ function App() {
         <HashRouter>
           <Switch>
             <Route exact path="/">
-                     <NavbarHOA onLogout={logout} />
-                     <HomePage />
+              <NavbarHOA onLogout={logout} />
+              <HomePage />
             </Route>
             <Route exact path="/login">
-                      <NavbarHOA onLogout={logout} />
-                      <LoginPage users={users} onLogin={login} />
+              <NavbarHOA onLogout={logout} />
+              <LoginPage users={users} onLogin={login} />
             </Route>
-            
+
             <Route exact path="/dashboard">
-                      <NavbarHOA onLogout={logout} />
-                      {activeUser? <DashboardPage />:<HomePage />}
-           </Route>
+              <NavbarHOA onLogout={logout} />
+              <DashboardPage />
+            </Route>
+            <Route exact path="/message">
+              <NavbarHOA onLogout={logout} />
+              <MessagePage />
+            </Route>
           </Switch>
         </HashRouter>
       </ActiveUserContext.Provider>

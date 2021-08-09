@@ -6,7 +6,7 @@ class UserModel {
         this.email = plainUser.email;
         this.pwd = plainUser.pwd;
         this.isCommittee=plainUser.isCommittee;
-
+        this.communityId=plainUser.communityId;
 
     }
 }

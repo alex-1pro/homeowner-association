@@ -1,0 +1,22 @@
+[
+    {
+        "msgId":1,
+        "createdBy": 1,
+        "createdAt": "2021-8-1",
+        "title":"Payment for august",
+        "details":"Do not forget to  pay a fee for the month of August",
+        "priority":2,
+        "comments":1,
+        "communityId":1
+    },
+    {
+        "msgId":2,
+        "createdBy": 3,
+        "createdAt": "2021-8-9",
+        "title":"Power failure",
+        "details":"On Thursday there will be a power outage between 13:00 -13: 20",
+        "priority":1,
+        "comments":2,
+        "communityId":2
+    }
+]
