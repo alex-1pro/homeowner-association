@@ -1,0 +1,16 @@
+[
+    {
+        "communityId":1,
+        "address":"Rotshild 1 ",
+        "city":"Tel-Aviv",
+        "email":"rotshild1@hoa.com"
+        
+    },
+    {
+        "communityId":2,
+        "address":"Bilu 9 ",
+        "city":"Bat Yam",
+        "email":"bilu@hoa.com"
+    }
+]
+

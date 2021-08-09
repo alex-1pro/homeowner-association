@@ -1,0 +1,14 @@
+div.p-login>h1.p-header{
+    text-align: center;
+}
+div.p-login{
+    background-color: #F0F2F5;
+   
+}
+div.p-form{
+    width:400px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

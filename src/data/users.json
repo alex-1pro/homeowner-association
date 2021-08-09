@@ -1,11 +1,39 @@
 [
     {
-        "id":1,
-        "fname":"Chuck",
-        "lname":"Norris",
-        "email":"chuck@gmail.com",
+        "id": 1,
+        "fname": "Chuck",
+        "lname": "Norris",
+        "email": "chuck@gmail.com",
         "pwd": "123",
-        "isCommittee":"true"    
+        "isCommittee": true,
+        "communityId": 1
+    },
+    {
+        "id": 2,
+        "fname": "Sarit",
+        "lname": "Hadad",
+        "email": "hadad@gmail.com",
+        "pwd": "123",
+        "isCommittee": false,
+        "communityId": 1
+    },
+    {
+        "id": 3,
+        "fname": "Omer",
+        "lname": "Adam",
+        "email": "adam@gmail.com",
+        "pwd": "123",
+        "isCommittee": true,
+        "communityId": 2
+    },
+    {
+        "id": 4,
+        "fname": "Static",
+        "lname": "Benal",
+        "email": "static-benal@gmail.com",
+        "pwd": "123",
+        "isCommittee": false,
+        "communityId": 2
     }
-]
 
+]

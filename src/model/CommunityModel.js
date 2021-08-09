@@ -1,9 +1,9 @@
 
 class CommunityModel{
     constructor(plainComunity){
-        this.id=plainComunity.id;
+        this.communityId=plainComunity.communityId;
+        this.city=plainComunity.city;
         this.address=plainComunity.address;
-        this.psw=plainComunity.psw;
         this.email=plainComunity.email;
     }
 } 

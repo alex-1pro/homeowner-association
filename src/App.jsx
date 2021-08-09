@@ -6,6 +6,8 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import jsonUsers from "./data/users.json"
 import { useState } from "react";
 import UserModel from "./model/UserModel";
+import ActiveUserContext from "./shared/ActiveUserContext";
+
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
   const [activeUser, setActiveUser] = useState();
@@ -20,24 +22,29 @@ function App() {
   }
 
 
+
   return (
     <div>
 
-
-      <HashRouter>
-        <Switch>
-          <Route exact path="/">
-            <NavbarHOA  activeUser={activeUser} onLogout={logout}/>
-            <HomePage />
-          </Route>
-          <Route exact path="/login">
-          <NavbarHOA  activeUser={activeUser} onLogout={logout}/>
-
-             <LoginPage activeUser={activeUser} users={users} onLogin={login} />
-             </Route>
-          <Route exact path="/dashboard">  <DashboardPage /></Route>
-        </Switch>
-      </HashRouter>
+      <ActiveUserContext.Provider value={activeUser}>
+        <HashRouter>
+          <Switch>
+            <Route exact path="/">
+                     <NavbarHOA onLogout={logout} />
+                     <HomePage />
+            </Route>
+            <Route exact path="/login">
+                      <NavbarHOA onLogout={logout} />
+                      <LoginPage users={users} onLogin={login} />
+            </Route>
+            
+            <Route exact path="/dashboard">
+                      <NavbarHOA onLogout={logout} />
+                      {activeUser? <DashboardPage />:<HomePage />}
+           </Route>
+          </Switch>
+        </HashRouter>
+      </ActiveUserContext.Provider>
     </div>
   );
 }
