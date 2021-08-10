@@ -1,0 +1,16 @@
+div.c-message{
+    background-color:#F0F2F5 ;
+    margin: 5px;
+    
+}
+.message-header{
+    cursor: pointer;
+    font-size: medium;
+}
+.hide{
+    display: none;
+   
+}
+.nonSeen{
+    font-weight: bold;
+}

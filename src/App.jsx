@@ -45,7 +45,7 @@ function App() {
             </Route>
             <Route exact path="/message">
               <NavbarHOA onLogout={logout} />
-              <MessagePage />
+              <MessagePage users={users} />
             </Route>
           </Switch>
         </HashRouter>
