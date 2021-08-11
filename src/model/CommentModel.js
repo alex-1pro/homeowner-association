@@ -5,6 +5,8 @@ class CommentModel{
         this.createdAt=plainCmt.createdAt;
         this.text=plainCmt.text;
         this.comments=plainCmt.comments;
-        this.topicId=plainCmt.plainCmt;//topicId is id of message , issue  or comment
+        this.topicId=plainCmt.topicId;//topicId is id of message , issue  or comment
     }
 }
+
+export default CommentModel;

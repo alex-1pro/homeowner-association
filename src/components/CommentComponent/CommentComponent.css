@@ -1,0 +1,14 @@
+div.c-comment{
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+h1.comment-header{
+    font-weight: bold;
+    font-size: medium;
+}
+p.comment-date{
+    color: gray;
+    font-size: x-small;
+}
