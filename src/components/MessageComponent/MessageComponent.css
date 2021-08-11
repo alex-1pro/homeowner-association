@@ -14,3 +14,18 @@ div.c-message{
 .nonSeen{
     font-weight: bold;
 }
+div.btn-hideshow{
+    font-weight: bold;
+    width: 30px;  
+    height: 30px;  
+    border-radius: 50%;
+    text-align: center;
+    color: #0D6EFD;
+    border:solid #FF4041;
+    cursor:pointer;
+
+}
+div.btn-hideshow:hover{
+    background-color: #0D6EFD;
+    color: #FF4041;
+}

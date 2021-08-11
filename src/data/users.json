@@ -21,7 +21,7 @@
         "id": 5,
         "fname": "Margot",
         "lname": "Robbie",
-        "email": "Margot@gmail.com",
+        "email": "margot@gmail.com",
         "pwd": "123",
         "isCommittee": false,
         "communityId": 1

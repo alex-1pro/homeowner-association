@@ -6,6 +6,7 @@ function CommentComponent({comment,createdBy}) {
             <h1 className="comment-header">{createdBy}</h1>
             <p className="comment-date">{comment.createdAt}</p>
             <p className="comment-text">{comment.text}</p>
+           
         </div>
     );
 }

@@ -3,15 +3,22 @@ import NavbarHOA from "./components/NavbarHOA/NavbarHOA";
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import jsonUsers from "./data/users.json"
 import { useState } from "react";
 import UserModel from "./model/UserModel";
 import ActiveUserContext from "./shared/ActiveUserContext";
 import MessagePage from "./pages/MessagePage/MessagePage";
+import MessageModel from "./model/MessageModel";
 
+import jsonUsers from "./data/users.json"
+import jsonMessages from "./data/messages.json"
+import jsonComments from "./data/comments.json"
+import CommentModel from "./model/CommentModel";
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
   const [activeUser, setActiveUser] = useState();
+  const [messages, setMessages] = useState(jsonMessages.map(msg => new MessageModel(msg)));
+  const [allComments, setAllComments] = useState(jsonComments.map(cmt => new CommentModel(cmt)));
+
 
   function login(activeUser) {
     setActiveUser(activeUser);
@@ -45,7 +52,7 @@ function App() {
             </Route>
             <Route exact path="/message">
               <NavbarHOA onLogout={logout} />
-              <MessagePage users={users} />
+              <MessagePage users={users} messages={messages} allComments={allComments}setAllComments={setAllComments}/>
             </Route>
           </Switch>
         </HashRouter>
