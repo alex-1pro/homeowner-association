@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "createdBy":2,
+        "createdAt":"2021-08-01",
+        "text":"Thanks, for the mention.",
+        "comments":null,
+        "topicId":1
+    },
+    {
+        "id":2,
+        "createdBy":5,
+        "createdAt":"2021-08-01",
+        "text":"I will pay at 10/8",
+        "comments":null,
+        "topicId":1
+    }
+]
+
+
+
+

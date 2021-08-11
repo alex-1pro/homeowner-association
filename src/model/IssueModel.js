@@ -1,6 +1,6 @@
 class IssueModel{
     constructor(plainIssue){
-        this.issueId=plainIssue.communityId;
+        this.id=plainIssue.id;
         this.reatedBy=plainIssue.createdBy;
         this.createdAt=plainIssue.createdAt;
         this.title=plainIssue.title;

@@ -1,6 +1,6 @@
 class MessageModel{
     constructor(plainMessage){
-        this.msgId=plainMessage.msgId;
+        this.id=plainMessage.id;
         this.createdBy=plainMessage.createdBy;
         this.createdAt=plainMessage.createdAt;
         this.title=plainMessage.title;

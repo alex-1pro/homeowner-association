@@ -18,6 +18,15 @@
         "communityId": 1
     },
     {
+        "id": 5,
+        "fname": "Margot",
+        "lname": "Robbie",
+        "email": "Margot@gmail.com",
+        "pwd": "123",
+        "isCommittee": false,
+        "communityId": 1
+    },
+    {
         "id": 3,
         "fname": "Omer",
         "lname": "Adam",
