@@ -13,12 +13,15 @@ import jsonUsers from "./data/users.json"
 import jsonMessages from "./data/messages.json"
 import jsonComments from "./data/comments.json"
 import CommentModel from "./model/CommentModel";
+import { nanoid } from "nanoid";
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
   const [activeUser, setActiveUser] = useState();
   const [messages, setMessages] = useState(jsonMessages.map(msg => new MessageModel(msg)));
   const [allComments, setAllComments] = useState(jsonComments.map(cmt => new CommentModel(cmt)));
 
+  // const id=nanoid(6);
+  // console.log(id);
 
   function login(activeUser) {
     setActiveUser(activeUser);
