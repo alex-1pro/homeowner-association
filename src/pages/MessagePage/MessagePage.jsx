@@ -16,7 +16,7 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
 
     const [isRead, setIsRead] = useState("nonSeen");
     const [newCommentText, setNewCommentText] = useState("");
-    const [showModal,setShowModal]=useState(true);
+    const [showModal,setShowModal]=useState(false);
     
     const activeUser = useContext(ActiveUserContext);
     
@@ -70,12 +70,12 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
         <div className="p-message">
             <Container >
                 <div className="msg-heading">
-               {activeUser.isCommittee?<div className="new-message">New Message</div> :null}
+               {activeUser.isCommittee?<div className="new-message" onClick={()=>setShowModal(true)}>New Message</div> :null}
                 </div>
                 <Row>
                     {msgsComps}
                 </Row>
-                <NewMessageModal onShow={showModal} onClose={()=>setShowModal(false)} onNewMessage={onNewMessage}/>
+                <NewMessageModal onShow={showModal} onClose={()=>setShowModal(false)} onCreate={onNewMessage}/>
             </Container>
         </div>
     );

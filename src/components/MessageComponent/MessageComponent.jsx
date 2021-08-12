@@ -26,7 +26,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
 
 
 
-            <Container>
+            <Container fluid>
                 <Row>
                     <Col >{msgCreatedBy.fname + " " + msgCreatedBy.lname}</Col>
                     <Col>{msg.title}</Col>

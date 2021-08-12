@@ -35,7 +35,7 @@ function App() {
   function createNewMessage(title, priority, img, details) {
       const newMessage= new MessageModel({
         id:nanoid(6),
-        createdBy:`${activeUser.fname} ${activeUser.fname}`,
+        createdBy:activeUser.id,
         createdAt:new Date().toISOString().slice(0, 10),
         title:title,
         details:details,
@@ -44,7 +44,7 @@ function App() {
         communityId:activeUser.communityId,
         img:img
       });
-
+      setMessages(messages.concat(newMessage));
 
   }
 
@@ -69,7 +69,7 @@ function App() {
             </Route>
             <Route exact path="/message">
               <NavbarHOA onLogout={logout} />
-              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} />
+              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} onNewMessage={createNewMessage}/>
             </Route>
           </Switch>
         </HashRouter>

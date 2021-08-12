@@ -11,8 +11,15 @@ function NewMessageModal({ onShow, onClose, onCreate }) {
     function clearForm() {
         setTitle("");
         setDetails("");
-        setPriority("");
+        setPriority("Info");
         setImg(null);
+    }
+
+    function createMessage(){
+        onCreate(title, priority, img, details);
+        clearForm();
+        onClose();
+
     }
 
     console.log(priority);
@@ -69,8 +76,8 @@ function NewMessageModal({ onShow, onClose, onCreate }) {
                     Cancel
                 </Button>
                 {/* <Button variant="primary" onClick={createRecipe}> */}
-                <Button variant="primary" >
-                    Create Recipe
+                <Button variant="primary" onClick={createMessage}>
+                    Create a Message
                 </Button>
             </Modal.Footer>
         </Modal>
