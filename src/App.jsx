@@ -48,6 +48,19 @@ function App() {
 
   }
 
+  // function deleteMessage(id){
+  //   const index=messages.findIndex(msg=>msg.id===id);
+  //   const tempArr=[...messages];
+  //   tempArr.splice(index,1);
+
+  // }
+  function deleteMessage(msg){
+    const index=messages.indexOf(msg);
+    const tempArr=[...messages];
+    tempArr.splice(index,1);
+    setMessages(tempArr);
+  }
+
   return (
     <div>
 
@@ -69,7 +82,7 @@ function App() {
             </Route>
             <Route exact path="/message">
               <NavbarHOA onLogout={logout} />
-              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} onNewMessage={createNewMessage}/>
+              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} onNewMessage={createNewMessage} onRemove={deleteMessage}/>
             </Route>
           </Switch>
         </HashRouter>

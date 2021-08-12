@@ -6,3 +6,6 @@ div> div.new-message{
 div> div.new-message:hover{
     color:  #198754;
 }
+iv> div.new-message:focus{
+    color:#FF4041
+}

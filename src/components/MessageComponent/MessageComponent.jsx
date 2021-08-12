@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Button, ButtonGroup, Card, Col, Container, Row } from 'react-bootstrap';
+import ActiveUserContext from '../../shared/ActiveUserContext';
 import CommentComponent from '../CommentComponent/CommentComponent';
 import "./MessageComponent.css";
 
 
-function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, users, onAddComment, onTextComment, newCommentText }) {
+function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, users, onAddComment, onTextComment, newCommentText,onRemove }) {
 
     const [hide, setHide] = useState("hide");
     const [textInput, setTextIput] = useState("");
-
+    const activeUser = useContext(ActiveUserContext);
+ 
 
 
     function showDetails() {
@@ -32,6 +34,8 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
                     <Col>{msg.title}</Col>
                     <Col>{msg.createdAt}</Col>
                     <Col><div className="btn-hideshow" onClick={showDetails}>{hide ? "+" : "-"}</div></Col>
+                    {activeUser.isCommittee? <Col><div className="btn-hideshow" onClick={()=>onRemove(msg)}>X</div></Col>:null}
+                 
                 </Row>
                 <Row>
                     <Col className={"commet-col "+hide}>

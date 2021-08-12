@@ -12,7 +12,7 @@ import { nanoid } from 'nanoid';
 import { Button, Container, Row } from 'react-bootstrap';
 import NewMessageModal from '../../components/NewMessageModal/NewMessageModal';
 
-function MessagePage({ users, messages, allComments, setAllComments,onNewMessage }) {
+function MessagePage({ users, messages, allComments, setAllComments,onNewMessage,onRemove}) {
 
     const [isRead, setIsRead] = useState("nonSeen");
     const [newCommentText, setNewCommentText] = useState("");
@@ -59,7 +59,7 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
     // filter return all community message  
     const msgsComps = messages.filter(msg => msg.communityId === activeUser.communityId).
         map(m => <MessageComponent msg={m} msgCreatedBy={msgCreatedBy(m)} setIsRead={setIsRead} isRead={isRead} comments={allMessageComments(m)} users={users}
-            onAddComment={addNewComment} onTextComment={setNewCommentText} newCommentText={newCommentText} />);
+            onAddComment={addNewComment} onTextComment={setNewCommentText} newCommentText={newCommentText} onRemove={onRemove} />);
 
   
 
@@ -68,7 +68,7 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
 
     return (
         <div className="p-message">
-            <Container >
+            <Container fluid>
                 <div className="msg-heading">
                {activeUser.isCommittee?<div className="new-message" onClick={()=>setShowModal(true)}>New Message</div> :null}
                 </div>
