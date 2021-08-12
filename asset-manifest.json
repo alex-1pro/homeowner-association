@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/homeowner-association/static/css/main.804a7f0c.chunk.css",
+    "main.js": "/homeowner-association/static/js/main.31b922e5.chunk.js",
+    "main.js.map": "/homeowner-association/static/js/main.31b922e5.chunk.js.map",
+    "runtime-main.js": "/homeowner-association/static/js/runtime-main.fedadd34.js",
+    "runtime-main.js.map": "/homeowner-association/static/js/runtime-main.fedadd34.js.map",
+    "static/css/2.da1eef19.chunk.css": "/homeowner-association/static/css/2.da1eef19.chunk.css",
+    "static/js/2.41d4d772.chunk.js": "/homeowner-association/static/js/2.41d4d772.chunk.js",
+    "static/js/2.41d4d772.chunk.js.map": "/homeowner-association/static/js/2.41d4d772.chunk.js.map",
+    "static/js/3.69271e1a.chunk.js": "/homeowner-association/static/js/3.69271e1a.chunk.js",
+    "static/js/3.69271e1a.chunk.js.map": "/homeowner-association/static/js/3.69271e1a.chunk.js.map",
+    "index.html": "/homeowner-association/index.html",
+    "static/css/2.da1eef19.chunk.css.map": "/homeowner-association/static/css/2.da1eef19.chunk.css.map",
+    "static/css/main.804a7f0c.chunk.css.map": "/homeowner-association/static/css/main.804a7f0c.chunk.css.map",
+    "static/js/2.41d4d772.chunk.js.LICENSE.txt": "/homeowner-association/static/js/2.41d4d772.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fedadd34.js",
+    "static/css/2.da1eef19.chunk.css",
+    "static/js/2.41d4d772.chunk.js",
+    "static/css/main.804a7f0c.chunk.css",
+    "static/js/main.31b922e5.chunk.js"
+  ]
+}
