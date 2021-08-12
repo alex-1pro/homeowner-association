@@ -8,6 +8,7 @@ class MessageModel{
         this.priority=plainMessage.priority;
         this.comments=plainMessage.comments;
         this.communityId=plainMessage.communityId;
+        this.img=plainMessage.img;
     }
 }
 

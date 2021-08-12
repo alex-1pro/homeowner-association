@@ -10,13 +10,16 @@ import CommentModel from '../../model/CommentModel';
 import CommentComponent from '../../components/CommentComponent/CommentComponent';
 import { nanoid } from 'nanoid';
 import { Button, Container, Row } from 'react-bootstrap';
+import NewMessageModal from '../../components/NewMessageModal/NewMessageModal';
 
-function MessagePage({ users, messages, allComments, setAllComments }) {
+function MessagePage({ users, messages, allComments, setAllComments,onNewMessage }) {
 
     const [isRead, setIsRead] = useState("nonSeen");
     const [newCommentText, setNewCommentText] = useState("");
+    const [showModal,setShowModal]=useState(true);
+    
     const activeUser = useContext(ActiveUserContext);
-
+    
 
 
     if (!activeUser) {
@@ -50,20 +53,15 @@ function MessagePage({ users, messages, allComments, setAllComments }) {
         }
     }
 
+   
+
+
     // filter return all community message  
     const msgsComps = messages.filter(msg => msg.communityId === activeUser.communityId).
         map(m => <MessageComponent msg={m} msgCreatedBy={msgCreatedBy(m)} setIsRead={setIsRead} isRead={isRead} comments={allMessageComments(m)} users={users}
             onAddComment={addNewComment} onTextComment={setNewCommentText} newCommentText={newCommentText} />);
 
-    /**
-     * this.id=plainCmt.id;
-            this.createdBy=plainCmt.createdBy;
-            this.createdAt=plainCmt.createdAt;
-            this.text=plainCmt.text;
-            this.comments=plainCmt.comments;
-            this.topicId=plainCmt.topicId;
-     */
-
+  
 
 
 
@@ -77,6 +75,7 @@ function MessagePage({ users, messages, allComments, setAllComments }) {
                 <Row>
                     {msgsComps}
                 </Row>
+                <NewMessageModal onShow={showModal} onClose={()=>setShowModal(false)} onNewMessage={onNewMessage}/>
             </Container>
         </div>
     );

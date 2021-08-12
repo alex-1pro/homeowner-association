@@ -13,6 +13,7 @@ import jsonUsers from "./data/users.json"
 import jsonMessages from "./data/messages.json"
 import jsonComments from "./data/comments.json"
 import CommentModel from "./model/CommentModel";
+import { nanoid } from "nanoid";
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
@@ -30,8 +31,22 @@ function App() {
     setActiveUser(null);
 
   }
+  
+  function createNewMessage(title, priority, img, details) {
+      const newMessage= new MessageModel({
+        id:nanoid(6),
+        createdBy:`${activeUser.fname} ${activeUser.fname}`,
+        createdAt:new Date().toISOString().slice(0, 10),
+        title:title,
+        details:details,
+        priority:priority,
+        comments:null,
+        communityId:activeUser.communityId,
+        img:img
+      });
 
 
+  }
 
   return (
     <div>
