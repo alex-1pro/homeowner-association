@@ -1,0 +1,8 @@
+div> div.new-message{
+    color:#0D6EFD ;
+    text-decoration: underline;
+    cursor:pointer;
+}
+div> div.new-message:hover{
+    color:  #198754;
+}

@@ -7,6 +7,9 @@ div.c-message{
     cursor: pointer;
     font-size: medium;
 }
+.commet-col{
+    padding: 10px;
+}
 .hide{
     display: none;
    
@@ -29,3 +32,12 @@ div.btn-hideshow:hover{
     background-color: #0D6EFD;
     color: #FF4041;
 }
+input.comment-input{
+    margin: 5px;
+    border-radius: 10px;
+    border:solid black;
+}
+input.comment-input:focus{
+    outline: none;
+}
+

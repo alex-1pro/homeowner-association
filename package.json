@@ -2,12 +2,14 @@
   "name": "homeowner_association",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alex-1pro.github.io/homeowner-association",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.2",
+    "gh-pages": "^3.2.3",
     "nanoid": "^3.1.23",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
@@ -17,6 +19,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
