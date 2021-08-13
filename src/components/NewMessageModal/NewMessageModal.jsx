@@ -22,7 +22,10 @@ function NewMessageModal({ onShow, onClose, onCreate }) {
 
     }
 
-    console.log(priority);
+    function handleFileChange(e) {
+        setImg(e.target.files[0]);
+    }
+
     return (
         <Modal show={onShow} onHide={onClose} size="lg">
             <Modal.Header closeButton>
@@ -53,8 +56,7 @@ function NewMessageModal({ onShow, onClose, onCreate }) {
                             Image:
                         </Form.Label>
                         <Col sm={9}>
-                            {/* <Form.Control type="file" accept="image/*" onChange={handleFileChange} /> */}
-                            <Form.Control type="file" accept="image/*" />
+                            <Form.Control type="file" accept="image/*" onChange={handleFileChange} />
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="formHorizontalImage">
@@ -75,7 +77,6 @@ function NewMessageModal({ onShow, onClose, onCreate }) {
                 <Button variant="secondary" onClick={onClose}>
                     Cancel
                 </Button>
-                {/* <Button variant="primary" onClick={createRecipe}> */}
                 <Button variant="primary" onClick={createMessage}>
                     Create a Message
                 </Button>

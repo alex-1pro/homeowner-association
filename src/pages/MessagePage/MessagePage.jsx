@@ -11,11 +11,11 @@ import CommentComponent from '../../components/CommentComponent/CommentComponent
 import { nanoid } from 'nanoid';
 import { Button, Container, Row } from 'react-bootstrap';
 import NewMessageModal from '../../components/NewMessageModal/NewMessageModal';
+import { BiMessageEdit } from 'react-icons/bi';
 
 function MessagePage({ users, messages, allComments, setAllComments,onNewMessage,onRemove}) {
 
     const [isRead, setIsRead] = useState("nonSeen");
-    const [newCommentText, setNewCommentText] = useState("");
     const [showModal,setShowModal]=useState(false);
     
     const activeUser = useContext(ActiveUserContext);
@@ -36,21 +36,20 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
         return allComments.filter(cmt => cmt.topicId === msg.id);
     }
 
-    function addNewComment(topicId) {
-        if (newCommentText) {
+    function addNewComment(text,topicId) {
+       
 
             const newComment = new CommentModel({
                 id: nanoid(6),
                 createdBy: activeUser.id,
                 createdAt: new Date().toISOString().slice(0, 10),
-                text: newCommentText,
+                text: text,
                 comments: null,
                 topicId: topicId
             });
             setAllComments(allComments.concat(newComment));
-            setNewCommentText("");
 
-        }
+      
     }
 
    
@@ -59,7 +58,7 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
     // filter return all community message  
     const msgsComps = messages.filter(msg => msg.communityId === activeUser.communityId).
         map(m => <MessageComponent msg={m} msgCreatedBy={msgCreatedBy(m)} setIsRead={setIsRead} isRead={isRead} comments={allMessageComments(m)} users={users}
-            onAddComment={addNewComment} onTextComment={setNewCommentText} newCommentText={newCommentText} onRemove={onRemove} />);
+            onAddComment={addNewComment}  onRemove={onRemove} />);
 
   
 
@@ -70,7 +69,7 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
         <div className="p-message">
             <Container fluid>
                 <div className="msg-heading">
-               {activeUser.isCommittee?<div className="new-message" onClick={()=>setShowModal(true)}>New Message</div> :null}
+               {activeUser.isCommittee?<div className="new-message" onClick={()=>setShowModal(true)}> New Message <BiMessageEdit/></div> :null}
                 </div>
                 <Row>
                     {msgsComps}

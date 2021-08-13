@@ -36,8 +36,14 @@ input.comment-input{
     margin: 5px;
     border-radius: 10px;
     border:solid black;
+    width: 50%;
 }
 input.comment-input:focus{
     outline: none;
 }
-
+div.message-info{
+    display: inline-block;
+}
+div.message-delete{
+    display: inline-block;
+}

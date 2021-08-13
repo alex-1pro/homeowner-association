@@ -2,10 +2,8 @@ div> div.new-message{
     color:#0D6EFD ;
     text-decoration: underline;
     cursor:pointer;
+    margin: 5px;
 }
 div> div.new-message:hover{
     color:  #198754;
-}
-iv> div.new-message:focus{
-    color:#FF4041
 }
