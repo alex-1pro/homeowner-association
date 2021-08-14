@@ -4,23 +4,27 @@ import { Button, Container, Row, Col, Image } from 'react-bootstrap';
 import './TenantComponent.css';
 import ActiveUserContext from '../../shared/ActiveUserContext';
 import { useState } from 'react';
+import InfoTenantModal from '../InfoTenantModal/InfoTenantModal';
 
 function TenantComponent({ tenant }) {
-    const [show, setShow] = useState(false);
+    // const [hide, setHide] = useState("hide");
+    const [showModal,setShowModal]=useState(false);
+    
     return (
         <>
-            <Row className="c-tenant ">
-                <Col key={tenant.id} md={3} sm={6}>
-                <Image className="tenant-img" src={tenant.img} roundedCircle />
-                    
+            <Container>
+            {/* <Row className="c-tenant" onClick={() => setHide(hide ? "" : "hide")}> */}
+                <Row className="c-tenant" onClick={() => setShowModal(true)}>
+                    <Col key={tenant.id} md={3} sm={6}>
+                        <Image className="tenant-img" src={tenant.img} roundedCircle />
+                        {`${tenant.fname} ${tenant.lname}`}
+                    </Col>
+                </Row>
+                {/* <Row className={"tenant-info "+hide}>
+            </Row> */}
+            <InfoTenantModal onShow={showModal} onClose={()=>setShowModal(false)}  tenant={tenant}/>
+            </Container>
 
-                    {`${tenant.fname} ${tenant.lname}`}
-                </Col>
-                {/* <Col xs={6} md={4}> <Image className="tenant-img" src="https://pbs.twimg.com/profile_images/1407346896/89.jpg" roundedCircle /> </Col> */}
-            </Row>
-            <div className="">
-
-            </div>
         </>
     );
 }

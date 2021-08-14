@@ -11,3 +11,10 @@
     object-fit: cover;
     margin: 5px;
 }
+.tenant-info{
+    background-color: #F0F2F5;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight:inherit
+}

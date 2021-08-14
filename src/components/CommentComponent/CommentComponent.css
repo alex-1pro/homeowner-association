@@ -7,6 +7,8 @@ div.c-comment{
 h1.comment-header{
     font-weight: bold;
     font-size: medium;
+    display: inline-block;
+    margin-left:5px;
 }
 p.comment-date{
     color: gray;

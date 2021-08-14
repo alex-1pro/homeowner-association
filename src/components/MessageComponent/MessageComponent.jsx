@@ -36,20 +36,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
         }
     }
     //commetComp is array of comments belonging to message
-    // const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)
-    //     .map(creater =>  `${creater.fname} ${creater.lname}`)}/>)
-
-   // commetComp is array of comments belonging to message
-    // const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)
-    //     .map(creater =>{
-    //         const autor=
-    //         {
-    //             createdBy:`${creater.fname} ${creater.lname}`,
-    //             img:creater.img
-    //         }
-    //     }  )}/>)
-
-
+  
     const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)}/>)
     
                    
