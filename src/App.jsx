@@ -48,13 +48,58 @@ function App() {
     setMessages(messages.concat(newMessage));
 
   }
+  /**
+   *  this.id = plainUser.id;
+          this.fname = plainUser.fname;
+          this.lname = plainUser.lname;
+          this.email = plainUser.email;
+          this.pwd = plainUser.pwd;
+          this.isCommittee=plainUser.isCommittee;
+          this.communityId=plainUser.communityId;
+   */
 
-  // function deleteMessage(id){
-  //   const index=messages.findIndex(msg=>msg.id===id);
-  //   const tempArr=[...messages];
-  //   tempArr.splice(index,1);
+  function addNewTenant(fname, lname, email, pwd, isCommittee) {
+    const newUser = new UserModel({
+      id: nanoid(6),
+      fname: fname,
+      lname: lname,
+      email: email,
+      pwd: pwd,
+      isCommittee: isCommittee,
+      communityId: activeUser.communityId
+    });
 
-  // }
+    setUsers(messages.concat(newUser));
+  }
+  function removeTenant(tenant){
+    const indexTenant=users.indexOf(tenant);
+    const tempArr=[...users];
+    tempArr.splice(indexTenant, 1);
+    setUsers(tempArr);
+  }
+
+  function updateTenant(tenant){
+    const indexTenant=users.indexOf(tenant);
+    const cloneTenant ={...users[indexTenant]};
+    cloneTenant=new UserModel(tenant);
+    const tempArr=[...users];
+    tempArr[indexTenant]=cloneTenant;
+    setUsers(tempArr);
+  }
+  function check(){
+    console.log("work");
+  }
+
+  const tenatsProps = {
+    users: users,
+    onAddTenant:addNewTenant,
+    onRemoveTenant:removeTenant,
+    onUpdateTenant:updateTenant,
+    onCheck:check
+  }
+
+
+
   function deleteMessage(msg) {
     const index = messages.indexOf(msg);
     const tempArr = [...messages];
@@ -91,8 +136,9 @@ function App() {
 
             <Route exact path="/tenants">
               <NavbarHOA onLogout={logout} />
-              <TenantsPage/>
+              <TenantsPage tenatsProps={tenatsProps}/>
             </Route>
+
           </Switch>
         </HashRouter>
       </ActiveUserContext.Provider>
