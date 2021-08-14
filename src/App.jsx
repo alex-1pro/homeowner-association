@@ -58,7 +58,7 @@ function App() {
           this.communityId=plainUser.communityId;
    */
 
-  function addNewTenant(fname, lname, email, pwd, isCommittee) {
+  function addNewTenant(fname, lname, email, pwd, isCommittee,apt) {
     const newUser = new UserModel({
       id: nanoid(6),
       fname: fname,
@@ -66,6 +66,7 @@ function App() {
       email: email,
       pwd: pwd,
       isCommittee: isCommittee,
+      apt:apt,
       communityId: activeUser.communityId
     });
 

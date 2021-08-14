@@ -1,6 +1,8 @@
 div.c-message{
     background-color:#F0F2F5 ;
     margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
     
 }
 .message-header{
@@ -45,5 +47,8 @@ div.message-info{
     display: inline-block;
 }
 div.message-delete{
+    display: inline-block;
+}
+div.new-message{
     display: inline-block;
 }

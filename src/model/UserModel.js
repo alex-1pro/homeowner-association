@@ -5,8 +5,10 @@ class UserModel {
         this.lname = plainUser.lname;
         this.email = plainUser.email;
         this.pwd = plainUser.pwd;
-        this.isCommittee=plainUser.isCommittee;
-        this.communityId=plainUser.communityId;
+        this.isCommittee = plainUser.isCommittee;
+        this.apt = plainUser.apt;
+        this.communityId = plainUser.communityId;
+        this.img=plainUser.img;
 
     }
 }

@@ -6,7 +6,9 @@
         "email": "chuck@gmail.com",
         "pwd": "123",
         "isCommittee": true,
-        "communityId": 1
+        "apt":"#5",
+        "communityId": 1,
+        "img":"https://m.media-amazon.com/images/M/MV5BMWMxMDIxYjMtNTY5Yi00YmJhLThhMTUtZDBlMmJjZjcwN2I5XkEyXkFqcGdeQXVyMDc2NTEzMw@@._V1_FMjpg_UX335_.jpg"
     },
     {
         "id": 2,
@@ -15,7 +17,9 @@
         "email": "hadad@gmail.com",
         "pwd": "123",
         "isCommittee": false,
-        "communityId": 1
+        "apt":"#7",
+        "communityId": 1,
+        "img":"https://m.media-amazon.com/images/M/MV5BMmJhMWYwOGYtZTI2Ni00NTljLTk3MTctNDhkMzViOWRkMTk5XkEyXkFqcGdeQXVyMjMyMzI4MzY@._V1_UY317_CR104,0,214,317_AL_.jpg"
     },
     {
         "id": 5,
@@ -24,7 +28,9 @@
         "email": "margot@gmail.com",
         "pwd": "123",
         "isCommittee": false,
-        "communityId": 1
+        "apt":"#1",
+        "communityId": 1,
+        "img":"https://m.media-amazon.com/images/M/MV5BMTgxNDcwMzU2Nl5BMl5BanBnXkFtZTcwNDc4NzkzOQ@@._V1_FMjpg_UX1000_.jpg"
     },
     {
         "id": 3,
@@ -33,7 +39,9 @@
         "email": "adam@gmail.com",
         "pwd": "123",
         "isCommittee": true,
-        "communityId": 2
+        "apt":"#15",
+        "communityId": 2,
+        "img":"https://upload.wikimedia.org/wikipedia/commons/e/e4/%D7%A2%D7%95%D7%9E%D7%A8_%D7%90%D7%93%D7%9D_%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%A9%D7%99_%D7%A4%D7%A8%D7%A0%D7%A7%D7%95_%28cropped%29.jpg"
     },
     {
         "id": 4,
@@ -41,8 +49,10 @@
         "lname": "Benal",
         "email": "static-benal@gmail.com",
         "pwd": "123",
+        "apt":"#23",
         "isCommittee": false,
-        "communityId": 2
+        "communityId": 2,
+        "img":"https://medias.atmag.co.il/www/uploads/2017/09/%D7%A1%D7%AA%D7%9D-%D7%A7%D7%95%D7%91%D7%A5-%D7%92%D7%93%D7%95%D7%9C_H-600x600.jpg"
     }
 
 ]

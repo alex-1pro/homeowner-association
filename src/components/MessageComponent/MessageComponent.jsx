@@ -6,7 +6,7 @@ import CommentComponent from '../CommentComponent/CommentComponent';
 import "./MessageComponent.css";
 import { FcInfo } from 'react-icons/fc';
 import { FiInfo } from 'react-icons/fi';
-import { RiDeleteBinLine,RiDeleteBinFill } from 'react-icons/ri';
+import { RiDeleteBinLine, RiDeleteBinFill } from 'react-icons/ri';
 import DeleteModal from '../DeleteModal/DeleteModal';
 
 
@@ -17,7 +17,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
     const [textInput, setTextIput] = useState("");
     const [hoverInfo, setHoverInfo] = useState(false);
     const [hoverDel, setHoverDel] = useState(false);
-    const [showModal,setShowModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     const activeUser = useContext(ActiveUserContext);
 
@@ -36,10 +36,26 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
         }
     }
     //commetComp is array of comments belonging to message
-    const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)
-        .map(creater => `${creater.fname} ${creater.lname}`)} />)
+    // const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)
+    //     .map(creater =>  `${creater.fname} ${creater.lname}`)}/>)
 
-    const btnDelete=hoverDel?<RiDeleteBinFill  size="2em" onClick={()=>setShowModal(true)}/> : <RiDeleteBinLine size="2em" />;
+   // commetComp is array of comments belonging to message
+    // const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)
+    //     .map(creater =>{
+    //         const autor=
+    //         {
+    //             createdBy:`${creater.fname} ${creater.lname}`,
+    //             img:creater.img
+    //         }
+    //     }  )}/>)
+
+
+    const commetComp = comments.map(c => <CommentComponent comment={c} createdBy={users.filter(user => user.id === c.createdBy)}/>)
+    
+                   
+        
+
+    const btnDelete = hoverDel ? <RiDeleteBinFill size="2em" onClick={() => setShowModal(true)} /> : <RiDeleteBinLine size="2em" />;
 
     return (
         // <div className={"c-message " + isRead} onClick={showDetails} >
@@ -65,7 +81,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
                                 <div className="message-delete" onMouseOver={() => setHoverDel(true)} onMouseLeave={() => setHoverDel(false)}>
                                     {btnDelete}
                                 </div>
-                            </Col>:null
+                            </Col> : null
                     }
                 </Row>
                 <Row>
@@ -80,7 +96,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
                 </Row>
                 <Row>
                     <Col>
-                        <DeleteModal onShow={showModal} onClose={()=>setShowModal(false)} onDelete={()=>onRemove(msg)}msg={msg} />
+                        <DeleteModal onShow={showModal} onClose={() => setShowModal(false)} onDelete={() => onRemove(msg)} msg={msg} />
 
                     </Col>
                 </Row>

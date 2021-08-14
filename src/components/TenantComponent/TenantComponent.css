@@ -1,0 +1,13 @@
+.c-tenant{
+    background-color: #F0F2F5;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight:inherit
+}
+.tenant-img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin: 5px;
+}
