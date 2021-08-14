@@ -2,6 +2,10 @@ import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
 function DeleteModal({ onShow, onClose, onDelete ,msg }) {
+    function deleteAccept(){
+        onDelete();
+        onClose();
+    }
     return (
         <div>
                 <Modal show={onShow} onHide={onClose}>
@@ -13,7 +17,7 @@ function DeleteModal({ onShow, onClose, onDelete ,msg }) {
                         <Button variant="secondary" onClick={onClose}>
                             No
                         </Button>
-                        <Button variant="primary" onClick={onDelete}>
+                        <Button variant="primary" onClick={deleteAccept}>
                             Yes
                         </Button>
                     </Modal.Footer>

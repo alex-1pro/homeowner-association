@@ -14,6 +14,7 @@ import jsonMessages from "./data/messages.json"
 import jsonComments from "./data/comments.json"
 import CommentModel from "./model/CommentModel";
 import { nanoid } from "nanoid";
+import TenantsPage from "./pages/TenantsPage/TenantsPage";
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
@@ -31,20 +32,20 @@ function App() {
     setActiveUser(null);
 
   }
-  
+
   function createNewMessage(title, priority, img, details) {
-      const newMessage= new MessageModel({
-        id:nanoid(6),
-        createdBy:activeUser.id,
-        createdAt:new Date().toISOString().slice(0, 10),
-        title:title,
-        details:details,
-        priority:priority,
-        comments:null,
-        communityId:activeUser.communityId,
-        img:img
-      });
-      setMessages(messages.concat(newMessage));
+    const newMessage = new MessageModel({
+      id: nanoid(6),
+      createdBy: activeUser.id,
+      createdAt: new Date().toISOString().slice(0, 10),
+      title: title,
+      details: details,
+      priority: priority,
+      comments: null,
+      communityId: activeUser.communityId,
+      img: img
+    });
+    setMessages(messages.concat(newMessage));
 
   }
 
@@ -54,10 +55,10 @@ function App() {
   //   tempArr.splice(index,1);
 
   // }
-  function deleteMessage(msg){
-    const index=messages.indexOf(msg);
-    const tempArr=[...messages];
-    tempArr.splice(index,1);
+  function deleteMessage(msg) {
+    const index = messages.indexOf(msg);
+    const tempArr = [...messages];
+    tempArr.splice(index, 1);
     setMessages(tempArr);
   }
 
@@ -67,10 +68,12 @@ function App() {
       <ActiveUserContext.Provider value={activeUser}>
         <HashRouter>
           <Switch>
+
             <Route exact path="/">
               <NavbarHOA onLogout={logout} />
               <HomePage />
             </Route>
+
             <Route exact path="/login">
               <NavbarHOA onLogout={logout} />
               <LoginPage users={users} onLogin={login} />
@@ -80,9 +83,15 @@ function App() {
               <NavbarHOA onLogout={logout} />
               <DashboardPage />
             </Route>
+
             <Route exact path="/message">
               <NavbarHOA onLogout={logout} />
-              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} onNewMessage={createNewMessage} onRemove={deleteMessage}/>
+              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} onNewMessage={createNewMessage} onRemove={deleteMessage} />
+            </Route>
+
+            <Route exact path="/tenants">
+              <NavbarHOA onLogout={logout} />
+              <TenantsPage/>
             </Route>
           </Switch>
         </HashRouter>

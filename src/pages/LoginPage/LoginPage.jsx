@@ -15,7 +15,8 @@ function LoginPage({ users, onLogin }) {
     const activeUser = useContext(ActiveUserContext);
 
     if (activeUser) {
-        return <Redirect to="/dashboard" />
+        // return <Redirect to="/dashboard" />
+        return <Redirect to="#/"/>
     }
 
     function login() {

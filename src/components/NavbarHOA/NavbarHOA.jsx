@@ -3,9 +3,14 @@ import { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import ActiveUserContext from '../../shared/ActiveUserContext';
 import './NavbarHOA.css'
-function NavbarHOA({onLogout}) {
+import { BiMessageAltDetail } from 'react-icons/bi'
+import { FiLogIn, FiLogOut,FiUsers } from 'react-icons/fi'
+import { AiOutlineForm, AiOutlineHome } from 'react-icons/ai'
+import { RiDashboardLine } from 'react-icons/ri'
+import { NavLink } from 'react-router-dom';
+function NavbarHOA({ onLogout }) {
 
-const activeUser = useContext(ActiveUserContext);
+    const activeUser = useContext(ActiveUserContext);
 
 
     return (
@@ -16,18 +21,18 @@ const activeUser = useContext(ActiveUserContext);
 
                 <Container fluid>
 
-                    <Navbar.Brand href="#/">HOA</Navbar.Brand>
+                    <Navbar.Brand href="#/">HOA  <AiOutlineHome /> </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            {/* {activeUser ? <Nav.Link href="#/recipes">Recipes</Nav.Link> : null} */}
-                          { activeUser? <Nav.Link href="#/dashboard">Dashboard</Nav.Link>:null}
-                          { activeUser? <Nav.Link href="#/message">Message</Nav.Link>:null}
-                                                  </Nav>
+                            {/* {activeUser ? <Nav.Link href="#/dashboard">Dashboard  <RiDashboardLine /></Nav.Link> : null} */}
+                            {activeUser ? <Nav.Link href="#/message">Message <BiMessageAltDetail /> </Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#/tenants">Tenants <FiUsers /> </Nav.Link> : null}
+                        </Nav>
                         <Nav className="ms-auto">
-                            {!activeUser ? <Nav.Link href="#/login">Login</Nav.Link> : null}
-                            {!activeUser ? <Nav.Link href="#/signup">Signup</Nav.Link> : null}
-                            {activeUser ? <Nav.Link href="#" onClick={() => onLogout()}>Logout</Nav.Link> : null}
+                            {!activeUser ? <Nav.Link href="#/login">Login <FiLogIn /> </Nav.Link> : null}
+                            {!activeUser ? <Nav.Link href="#/signup">Signup <AiOutlineForm /> </Nav.Link> : null}
+                            {activeUser ? <Nav.Link href="#" onClick={() => onLogout()}>Logout <FiLogOut /> </Nav.Link> : null}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
