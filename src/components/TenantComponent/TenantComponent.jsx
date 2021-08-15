@@ -6,7 +6,7 @@ import ActiveUserContext from '../../shared/ActiveUserContext';
 import { useState } from 'react';
 import InfoTenantModal from '../InfoTenantModal/InfoTenantModal';
 
-function TenantComponent({ tenant }) {
+function TenantComponent({ tenant,tenantAction }) {
     // const [hide, setHide] = useState("hide");
     const [showModal,setShowModal]=useState(false);
     
@@ -22,7 +22,7 @@ function TenantComponent({ tenant }) {
                 </Row>
                 {/* <Row className={"tenant-info "+hide}>
             </Row> */}
-            <InfoTenantModal onShow={showModal} onClose={()=>setShowModal(false)}  tenant={tenant}/>
+            <InfoTenantModal onShow={showModal} onClose={()=>setShowModal(false)}  tenant={tenant} onRemoveTenant={tenantAction.onRemoveTenant} onUpdateTenant={tenantAction.onUpdateTenant}/>
             </Container>
 
         </>

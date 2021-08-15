@@ -80,11 +80,9 @@ function App() {
   }
 
   function updateTenant(tenant){
-    const indexTenant=users.indexOf(tenant);
-    const cloneTenant ={...users[indexTenant]};
-    cloneTenant=new UserModel(tenant);
+    const index = users.findIndex(user=>user.id===tenant.id);
     const tempArr=[...users];
-    tempArr[indexTenant]=cloneTenant;
+    tempArr[index]=tenant;
     setUsers(tempArr);
   }
   function check(){
