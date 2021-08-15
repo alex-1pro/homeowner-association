@@ -12,7 +12,7 @@ function TenantComponent({ tenant,tenantAction }) {
     
     return (
         <>
-            <Container>
+           
             {/* <Row className="c-tenant" onClick={() => setHide(hide ? "" : "hide")}> */}
                 <Row className="c-tenant" onClick={() => setShowModal(true)}>
                     <Col key={tenant.id} md={3} sm={6}>
@@ -23,7 +23,7 @@ function TenantComponent({ tenant,tenantAction }) {
                 {/* <Row className={"tenant-info "+hide}>
             </Row> */}
             <InfoTenantModal onShow={showModal} onClose={()=>setShowModal(false)}  tenant={tenant} onRemoveTenant={tenantAction.onRemoveTenant} onUpdateTenant={tenantAction.onUpdateTenant}/>
-            </Container>
+           
 
         </>
     );

@@ -58,7 +58,7 @@ function App() {
           this.communityId=plainUser.communityId;
    */
 
-  function addNewTenant(fname, lname, email, pwd, isCommittee,apt) {
+  function addNewTenant(fname, lname, email, pwd, isCommittee,apt,img) {
     const newUser = new UserModel({
       id: nanoid(6),
       fname: fname,
@@ -67,10 +67,11 @@ function App() {
       pwd: pwd,
       isCommittee: isCommittee,
       apt:apt,
-      communityId: activeUser.communityId
+      communityId: activeUser.communityId,
+      img:img
     });
 
-    setUsers(messages.concat(newUser));
+    setUsers(users.concat(newUser));
   }
   function removeTenant(tenant){
     const indexTenant=users.indexOf(tenant);
