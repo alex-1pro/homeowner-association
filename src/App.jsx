@@ -135,7 +135,9 @@ function voting( vote,answer){
 
             <Route exact path="/">
               <NavbarHOA onLogout={logout} />
-              <HomePage />
+              {/* <HomePage /> */}
+              <MessagePage users={users} messages={messages} allComments={allComments} setAllComments={setAllComments} onNewMessage={createNewMessage} onRemove={deleteMessage} />
+
             </Route>
 
             <Route exact path="/login">

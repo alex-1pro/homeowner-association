@@ -2,3 +2,18 @@
     margin: 10px;
     
 }
+.voting-card{
+    margin: 10px;
+    background-color:#F0F2F5 ;
+}
+.chart-pie{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+.voting-title{
+    margin: 0 auto;
+}
+.voting-body{
+    margin: 0 auto;
+}

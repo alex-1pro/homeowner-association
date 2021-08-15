@@ -16,7 +16,7 @@ function LoginPage({ users, onLogin }) {
 
     if (activeUser) {
         // return <Redirect to="/dashboard" />
-        return <Redirect to="#/"/>
+        return <Redirect to="#/message"/>
     }
 
     function login() {

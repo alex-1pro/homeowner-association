@@ -25,7 +25,7 @@ function VotingPage({ allVoting,voting }) {
         <div className="p-voting">
          
          {/* <VotingComponent voting={allVoting[0]} onAnswer={voting} allVoting={allVoting}/> */}
-         {votingContent}
+         {votingContent.length>0? votingContent:<span className="no-voting">You dont have any voiting.</span>}
         </div>
     );
 }
