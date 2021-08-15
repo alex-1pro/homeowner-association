@@ -24,7 +24,7 @@ function TenantsPage({ tenatsProps }) {
     return (
         <div className="p-tenants">
             <Container >
-                <div className="new-tenant" onClick={()=>setShowModal(true)}>Add New Tenant <BiUserPlus size="1.3em"/> </div>
+            {activeUser.isCommittee?<div className="new-tenant" onClick={()=>setShowModal(true)}>Add New Tenant <BiUserPlus size="1.3em"/> </div>:null}
                 {tenants}
                 {/* <Button onClick={()=> tenatsProps.onCheck()}>check!</Button> */}
                

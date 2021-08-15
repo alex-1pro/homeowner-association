@@ -67,7 +67,7 @@ function MessagePage({ users, messages, allComments, setAllComments,onNewMessage
 
     return (
         <div className="p-message">
-            <Container fluid>
+            <Container >
                 <div className="msg-heading">
                {activeUser.isCommittee?<div className="new-message" onClick={()=>setShowModal(true)}> New Message <BiMessageEdit/></div> :null}
                 </div>

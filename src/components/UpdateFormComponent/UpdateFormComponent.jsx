@@ -93,7 +93,7 @@ function UpdateFormComponent({ onUpdateTenanat, tenant, onShowBtnHideForm }) {
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formHorizontalCheck">
                     <Col sm={{ span: 10, offset: 2 }}>
-                        <Form.Check label="Committee" onChange={() => setIsCommittee(!isCommittee)} />
+                        <Form.Check label="Committee" checked={isCommittee} onChange={() => setIsCommittee(!isCommittee)} />
                     </Col>
                 </Form.Group>
 

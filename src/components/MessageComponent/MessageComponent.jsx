@@ -5,7 +5,7 @@ import ActiveUserContext from '../../shared/ActiveUserContext';
 import CommentComponent from '../CommentComponent/CommentComponent';
 import "./MessageComponent.css";
 import { FcInfo } from 'react-icons/fc';
-import { FiInfo } from 'react-icons/fi';
+import { FiInfo ,FiSend} from 'react-icons/fi';
 import { RiDeleteBinLine, RiDeleteBinFill } from 'react-icons/ri';
 import DeleteModal from '../DeleteModal/DeleteModal';
 
@@ -50,7 +50,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
 
 
 
-            <Container fluid>
+            <Container >
                 <Row>
                     <Col >{msgCreatedBy.fname + " " + msgCreatedBy.lname}</Col>
                     <Col>{msg.title}</Col>
@@ -77,7 +77,7 @@ function MessageComponent({ msg, msgCreatedBy, setIsRead, isRead, comments, user
                         {commetComp}
                         <div className="container-input">
                             <input className="comment-input" value={textInput} type="text" placeholder="Add new Comment" onChange={e => setTextIput(e.target.value)} />
-                            <Button className="comment-btn" variant="success" onClick={() => saveText()}>Send</Button>
+                            <Button className="comment-btn" variant="success" onClick={() => saveText()}>Send <FiSend/> </Button>
                         </div>
                     </Col>
                 </Row>

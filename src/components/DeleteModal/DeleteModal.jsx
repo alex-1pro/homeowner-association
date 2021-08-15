@@ -14,10 +14,10 @@ function DeleteModal({ onShow, onClose, onDelete ,msg }) {
                     </Modal.Header>
                     <Modal.Body>Do you sure want to delete this message?</Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={onClose}>
+                        <Button variant="success" onClick={onClose}>
                             No
                         </Button>
-                        <Button variant="primary" onClick={deleteAccept}>
+                        <Button variant="danger" onClick={deleteAccept}>
                             Yes
                         </Button>
                     </Modal.Footer>

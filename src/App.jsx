@@ -9,19 +9,27 @@ import ActiveUserContext from "./shared/ActiveUserContext";
 import MessagePage from "./pages/MessagePage/MessagePage";
 import MessageModel from "./model/MessageModel";
 
-import jsonUsers from "./data/users.json"
-import jsonMessages from "./data/messages.json"
-import jsonComments from "./data/comments.json"
+import jsonUsers from "./data/users.json";
+import jsonMessages from "./data/messages.json";
+import jsonComments from "./data/comments.json";
+import jsonVoting from  "./data/voiting.json";
+
 import CommentModel from "./model/CommentModel";
+
+
 import { nanoid } from "nanoid";
 import TenantsPage from "./pages/TenantsPage/TenantsPage";
+import VotingModel from "./model/VotingModel";
+import VotingPage from "./pages/VotingPage/VotingPage";
 
 function App() {
   const [users, setUsers] = useState(jsonUsers.map(plainUser => new UserModel(plainUser)));
   const [activeUser, setActiveUser] = useState();
   const [messages, setMessages] = useState(jsonMessages.map(msg => new MessageModel(msg)));
   const [allComments, setAllComments] = useState(jsonComments.map(cmt => new CommentModel(cmt)));
-
+  const [allVoting,setAllVoting] = useState(jsonVoting.map(vote=>new VotingModel(vote)));
+ 
+  console.log(allVoting[0].createdBy);
 
 
   function login(activeUser) {
@@ -48,15 +56,7 @@ function App() {
     setMessages(messages.concat(newMessage));
 
   }
-  /**
-   *  this.id = plainUser.id;
-          this.fname = plainUser.fname;
-          this.lname = plainUser.lname;
-          this.email = plainUser.email;
-          this.pwd = plainUser.pwd;
-          this.isCommittee=plainUser.isCommittee;
-          this.communityId=plainUser.communityId;
-   */
+ 
 
   function addNewTenant(fname, lname, email, pwd, isCommittee,apt,img) {
     const newUser = new UserModel({
@@ -138,6 +138,12 @@ function App() {
               <NavbarHOA onLogout={logout} />
               <TenantsPage tenatsProps={tenatsProps}/>
             </Route>
+
+            <Route exact path="/voting">
+              <NavbarHOA onLogout={logout} />
+              <VotingPage  voting={allVoting}/>
+            </Route>
+
 
           </Switch>
         </HashRouter>

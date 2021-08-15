@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Image, Row, Col } from 'react-bootstrap';
 import './CommentComponent.css'
 function CommentComponent({ comment, createdBy }) {
-    console.log(createdBy);
+    // console.log(createdBy);
     if (createdBy.length === 0) {
         return null;
     }
