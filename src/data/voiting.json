@@ -1,17 +1,19 @@
 [
-    {   "communityId":1,
+    {  
+         "communityId":1,
         "createdBy":1,
         "createdAt":"2021-08-15",
         "title":"Should Buy  security cameras for lobi? ",
         "detais":"Every tenant need pay 200 NIS for security cameras.",
         "options":["yes","no"],
         "votes":[
-            {
-                "voteId":1,
-                "answer":0
-            },
+          
             {
                 "voteId":5,
+                "answer":1
+            },
+            {
+                "voteId":2,
                 "answer":1
             }
         ]

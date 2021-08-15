@@ -28,9 +28,28 @@ function App() {
   const [messages, setMessages] = useState(jsonMessages.map(msg => new MessageModel(msg)));
   const [allComments, setAllComments] = useState(jsonComments.map(cmt => new CommentModel(cmt)));
   const [allVoting,setAllVoting] = useState(jsonVoting.map(vote=>new VotingModel(vote)));
- 
+  const [vote,setVote]=useState(null);
   console.log(allVoting[0].createdBy);
 
+
+//vote is voite answer is what user choise
+function voting( vote,answer){
+  const index =allVoting.indexOf(vote);
+  console.log(index);
+  const cVote = {...allVoting[index]};
+  const indexUser= cVote.votes.findIndex(v=>v.voteId===activeUser.id) ;
+  console.log("index user is" +indexUser);
+  if(indexUser === -1){
+    cVote.votes.push(
+                  { 
+                    voteId:activeUser.id,
+                        answer:answer
+                  });
+    const cloneAllVoting = [...allVoting];
+    cloneAllVoting[index]=cVote;              
+    setAllVoting(cloneAllVoting);                  
+  }
+}
 
   function login(activeUser) {
     setActiveUser(activeUser);
@@ -141,7 +160,7 @@ function App() {
 
             <Route exact path="/voting">
               <NavbarHOA onLogout={logout} />
-              <VotingPage  voting={allVoting}/>
+              <VotingPage  allVoting={allVoting}  voting={voting}/>
             </Route>
 
 
