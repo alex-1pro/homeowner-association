@@ -36,7 +36,7 @@ function LoginPage({ users, onLogin }) {
             {showInvalidLogin ?
                 <Alert variant="danger" onClose={() => setShowInvalidLogin(false)} dismissible>Invalid Credentials!</Alert> : null}
             <div className="p-form">
-            <p>or <Link to="/signup">create an account</Link></p>
+            {/* <p>or <Link to="/signup">create an account</Link></p> */}
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
