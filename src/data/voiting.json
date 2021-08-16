@@ -28,5 +28,28 @@
        "details":"Every tenant need pay to 50 NIS for for new door.",
        "options":["yes","no"],
        "votes":[]
-   }
+   },
+
+    {  
+        "id":4,
+        "communityId":1,
+       "createdBy":1,
+       "createdAt":"2021-08-16",
+       "title":"Should we add another day of cleaning?",
+       "details":"Add cleaning day on sunday",
+       "options":["yes","no"],
+       "votes":[]
+   },
+
+   {  
+    "id":3,
+    "communityId":2,
+    "createdBy":3,
+    "createdAt":"2021-08-15",
+    "title":"Should Buy  security cameras for lobi? ",
+    "details":"Every tenant need pay 200 NIS for security cameras.",
+    "options":["yes","no"],
+    "votes":[]
+}
+   
 ]
